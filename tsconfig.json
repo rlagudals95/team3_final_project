@@ -17,5 +17,4 @@
     "jsx": "react"
   },
   "include": ["./src"],
-  "exclude": ["./dist"]
 }
