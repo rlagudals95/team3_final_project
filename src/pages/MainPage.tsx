@@ -3,7 +3,7 @@ import React, { Suspense } from "react";
 const MainPage = () => {
   return (
     <>
-      <div>sdsd</div>
+      <div>메인페이지</div>
     </>
   );
 };
