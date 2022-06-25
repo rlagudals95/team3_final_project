@@ -31,27 +31,19 @@ interface IProps {
   backgroundColor?: string;
   onClick?: (e: React.MouseEvent) => void;
   disabled?: boolean;
-  style?: StyleCustom;
+  styleCustom?: StyleCustom;
   cardPromotionValue?: string;
 }
 
 function Card(props: IProps) {
-  const {
-    cardType,
-    onClick,
-    disabled = false,
-    style,
-    cardTitle,
-    cardDesc,
-    cardExpiration,
-    className,
-  }: IProps = props;
+  const { onClick, styleCustom, cardTitle, cardDesc, className }: IProps =
+    props;
 
   return (
     <>
       <CardWrapper
         className={className}
-        style={style}
+        styleCustom={styleCustom}
         onClick={onClick}
         color={COLOR_V2.WHITE1}
         hoverColor={COLOR_V2.PRIMARY5}
@@ -59,14 +51,12 @@ function Card(props: IProps) {
         disabledColor={COLOR_V2.PRIMARY_DISABLED}
       >
         <CardContentWrapper>
-          <CardTitleWrapper style={style}>{cardTitle}</CardTitleWrapper>
-          {/* <hr style={{ marginTop: "16px" }} /> */}
-          <CardDescWrapper style={style}>{cardDesc}</CardDescWrapper>
-          {cardType === "coupon" && (
-            <ExpirationWrapper style={style}>
-              {cardExpiration}
-            </ExpirationWrapper>
-          )}
+          <CardTitleWrapper styleCustom={styleCustom}>
+            {cardTitle}
+          </CardTitleWrapper>
+          <CardDescWrapper styleCustom={styleCustom}>
+            {cardDesc}
+          </CardDescWrapper>
         </CardContentWrapper>
       </CardWrapper>
     </>
@@ -76,44 +66,39 @@ function Card(props: IProps) {
 export default Card;
 
 const CardWrapper = styled.div<any>`
-  background-color: ${(props) => props.style?.background ?? ""};
-  color: ${(props) => props.style?.color ?? ""};
+  background-color: ${(props) => props.styleCustom?.background ?? ""};
+  color: ${(props) => props.styleCustom?.color ?? ""};
   border-radius: 8px;
-  border: ${(props) => props.style?.border ?? ""};
-  padding: ${(props) => props.style?.padding ?? ""};
-  order: 2;
-  flex-grow: 0;
+  border: ${(props) => props.styleCustom?.border ?? ""};
+  padding: ${(props) => props.styleCustom?.padding ?? ""};
   font-style: normal;
   font-weight: 600;
-  font-size: ${(props) => props.style?.fontSize ?? "18px"};
+  font-size: ${(props) => props.styleCustom?.fontSize ?? "18px"};
   line-height: 22px;
   text-align: left;
   letter-spacing: -0.02em;
-  width: ${(props) => props.style?.width ?? ""};
-  height: ${(props) => props.style?.height ?? ""};
-  margin: ${(props) => props.style?.margin ?? ""};
+  width: ${(props) => props.styleCustom?.width ?? ""};
+  height: ${(props) => props.styleCustom?.height ?? ""};
+  margin: ${(props) => props.styleCustom?.margin ?? ""};
 
   @media screen and (max-width: 680px) {
     width: 100%;
   }
 
   &:hover {
-    background-color: ${(props) => props.style?.hoverColor ?? ""};
+    background-color: ${(props) => props.styleCustom?.hoverColor ?? ""};
   }
   &:active {
-    background-color: ${(props) => props.style?.activeColor ?? ""};
+    background-color: ${(props) => props.styleCustom?.activeColor ?? ""};
   }
   &:disabled {
-    background-color: ${(props) => props.style?.disabledColor ?? ""};
+    background-color: ${(props) => props.styleCustom?.disabledColor ?? ""};
   }
 `;
 
 const CardContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 0px;
-  margin: 0px;
   height: 100%;
 `;
 
@@ -125,26 +110,13 @@ const CardTitleWrapper = styled.div<any>`
   align-items: center;
   text-align: center;
   letter-spacing: -0.02em;
-  color: ${(props) => props.style?.titleColor ?? ""};
-  flex: none;
-  order: 0;
-  flex-grow: 0;
 `;
 
 const CardDescWrapper = styled.div<any>`
   margin-top: 16px;
-  color: ${(props) => props.style?.descColor ?? ""}
   font-weight: 400;
   font-size: 12px;
   line-height: 90%;
   display: flex;
-  letter-spacing: -0.02em
-`;
-
-const ExpirationWrapper = styled.div<any>`
-  margin: 8px 0px 0px 0px;
-  color: ${(props) => props.style?.expirationColor ?? ""};
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 90%;
+  letter-spacing: -0.02em;
 `;

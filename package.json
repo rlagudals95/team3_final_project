@@ -14,7 +14,8 @@
     "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0",
     "recoil": "0.7.3",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "3.2.0",

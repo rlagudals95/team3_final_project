@@ -5,6 +5,7 @@ import { RecoilRoot } from "recoil";
 
 import "./App.css";
 import MainPage from "./pages/MainPage";
+
 // test
 const queryClient = new QueryClient();
 function App() {
@@ -29,10 +30,12 @@ function App() {
                 <div>메뉴</div>
               </div>
             </header>
+
             <Routes>
               <Route path="/" element={<MainPage />} />
               <Route path="/myPage" element={<MainPage />} />
             </Routes>
+
             <footer className="w-full px-2 py-4 mt-10 bg-gray-100">
               <div className="flex items-center justify-between my-4">
                 <p className="inline-flex px-2 pt-6 text-blue-500">
