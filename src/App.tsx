@@ -13,24 +13,22 @@ const queryClient = new QueryClient();
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <RecoilRoot>
-        <BrowserRouter>
-          <Header />
-          <div className="App">
-            <div className="bg-secondary-1 flex items-center min-h-screen bg-white dark:bg-gray-900">
-              <div className="container max-w-screen-lg xl:max-w-screen-xl mx-auto">
-                <div className="max-w-md mx-auto my-10 w-full">
-                  <Routes>
-                    <Route path="/" element={<MainPage />} />
-                    <Route path="/myPage" element={<MainPage />} />
-                  </Routes>
-                </div>
+      <BrowserRouter>
+        <Header />
+        <div className="App">
+          <div className="bg-secondary-1 flex items-center min-h-screen bg-white dark:bg-gray-900">
+            <div className="container max-w-screen-lg xl:max-w-screen-xl mx-auto">
+              <div className="max-w-md mx-auto my-10 w-full">
+                <Routes>
+                  <Route path="/" element={<MainPage />} />
+                  <Route path="/myPage" element={<MainPage />} />
+                </Routes>
               </div>
             </div>
-            <Footer />
           </div>
-        </BrowserRouter>
-      </RecoilRoot>
+          <Footer />
+        </div>
+      </BrowserRouter>
     </QueryClientProvider>
   );
 }
