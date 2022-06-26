@@ -5,6 +5,7 @@ export const countAtom = atom({
   key: "countState",
   default: 0,
 });
+
 const doubleSelector = selector({
   key: "double",
   get: (opts) => {
