@@ -22,7 +22,7 @@ export const recoilStarCountState = selector({
   },
 });
 
-export const increaseSelector = selector({
+export const increaseValueSelector = selector({
     key: "setStarCount",
     get: (opt) => {
         return opt.get(recoilStarCountState) + 1;

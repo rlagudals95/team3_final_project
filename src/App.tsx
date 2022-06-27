@@ -1,14 +1,14 @@
 import React, { Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { RecoilRoot } from "recoil";
 
 import "./App.css";
 import Footer from "./containers/Footer";
 import Header from "./containers/Header";
 import MainPage from "./pages/MainPage";
+import SignInPage from "./pages/SignInPage";
+import SignUpPage from "./pages/SignUpPage";
 
-// test
 const queryClient = new QueryClient();
 function App() {
   return (
@@ -22,6 +22,8 @@ function App() {
                 <Routes>
                   <Route path="/" element={<MainPage />} />
                   <Route path="/myPage" element={<MainPage />} />
+                  <Route path="/signInPage" element={<SignInPage />} />
+                  <Route path="/signUpPage" element={<SignUpPage />} />
                 </Routes>
               </div>
             </div>
