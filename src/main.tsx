@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { RecoilRoot } from "recoil";
 import "virtual:windi-devtools";
 import "virtual:windi.css";
 
@@ -8,6 +9,10 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
+    <RecoilRoot>
+      <React.Suspense fallback={<div>Loading... </div>}>
+        <App />
+      </React.Suspense>
+    </RecoilRoot>
   </React.StrictMode>
 );
