@@ -278,13 +278,13 @@ const InputWrapper = styled.input<any>`
       ? "1px solid" + props.styleCustom?.errorColor
       : "1px solid" + props.styleCustom?.borderColor};
 
-  //width:  ${(props) =>
+  width: ${(props) =>
     props.inputType === "email"
       ? "55%"
       : props.styleCustom?.width
       ? props.styleCustom?.width
-      : ""}  ;
-  //height : ${(props) =>
+      : ""};
+  height: ${(props) =>
     props.styleCustom?.height ? props.styleCustom?.height : ""};
   width: 100%;
   height: 100%;
@@ -334,12 +334,12 @@ const InputOuter = styled.div<any>`
 const ClearBtn = styled.button<any>`
   width: 16.5px;
   height: 16.5px;
-  position:absolute;
+  position: absolute;
   right: 15px;
   top: 35%;
-  transform: translateY(-50%)
-  border:none;
-  cursor:pointer;
+  transform: translateY(-50%);
+  border: none;
+  cursor: pointer;
 `;
 
 const ValidationError = styled.div`
@@ -355,7 +355,7 @@ const ValidationError = styled.div`
 
 const ValidationSuccess = styled.div`
   display: flex;
-  item-align: center;
+  align-items: center;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -507,12 +507,12 @@ const NationalCodeSelectWrapper = styled.select<any>`
 const TimerWrapper = styled.span`
   width: 16.5px;
   height: 16.5px;
-  position:absolute;
+  position: absolute;
   right: 25px;
   top: 45%;
-  transform: translateY(-50%)
-  border:none;
-  cursor:pointer;
+  transform: translateY(-50%);
+  border: none;
+  cursor: pointer;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
